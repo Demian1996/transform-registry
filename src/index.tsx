@@ -36,14 +36,17 @@ function App() {
   }, []);
 
   const onDownload = useCallback(() => {
-    const regex = /https:\/\/registry\.npmjs\.org\//gm;
-    const newContent = lockfileContent.replace(regex, () => {
-      if (targetRegistry.slice(-1) !== '/') {
-        return targetRegistry + '/';
-      }
-      return targetRegistry;
+    let content = lockfileContent;
+    Object.keys(REGEX_MAP).forEach((key) => {
+      const regex = REGEX_MAP[key as keyof typeof REGEX_MAP].reg;
+      content = content.replace(regex, () => {
+        if (targetRegistry.slice(-1) !== '/') {
+          return targetRegistry + '/';
+        }
+        return targetRegistry;
+      });
     });
-    const blob = new Blob([newContent], { type: 'text/plain' });
+    const blob = new Blob([content], { type: 'text/plain' });
 
     const a = document.createElement('a');
     a.download = mode === 'yarn' ? 'yarn.lock' : 'package-lock.json';

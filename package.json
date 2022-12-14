@@ -1,6 +1,7 @@
 {
   "private": true,
   "version": "1.0.0",
+  "homepage": "./",
   "main": "dist/index.js",
   "dependencies": {
     "antd": "^4.5.4",
@@ -22,6 +23,7 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-import": "^1.13.0",
     "css-loader": "^3.0.0",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.3.2",
     "less": "^3.12.2",
     "less-loader": "^6.2.0",
@@ -36,7 +38,8 @@
   },
   "scripts": {
     "dev": "webpack server --config ./webpack/webpack.dev.js",
-    "build": "webpack --config ./webpack/webpack.prod.js"
+    "build": "webpack --config ./webpack/webpack.prod.js",
+    "deploy": "gh-pages -d dist"
   },
   "name": "transform-registry"
 }
