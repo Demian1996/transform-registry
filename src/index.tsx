@@ -7,7 +7,8 @@ import './index.less';
 import { RcFile } from 'antd/lib/upload';
 
 const REGEX_MAP = {
-  org: { reg: /https:\/\/registry\.npmjs\.org\//gm, desc: 'https://registry.npmjs.org/' },
+  npmorg: { reg: /https:\/\/registry\.npmjs\.org\//gm, desc: 'https://registry.npmjs.org/' },
+  yarnorg: { reg: /https:\/\/registry\.yarnpkg\.com\//gm, desc: 'https://registry.yarnpkg.com/'},
   taobao: { reg: /https:\/\/registry\.npm\.taobao\.org\//gm, desc: 'https://registry.npm.taobao.org/' },
   mirror: { reg: /https:\/\/registry\.npmmirror\.com\//gm, desc: 'https://registry.npmmirror.com/' },
 };
