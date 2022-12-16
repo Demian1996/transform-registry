@@ -1,1 +1,2 @@
-sed 用起来麻烦，写个转换工具替换 lock 文件的 registry
+组员用 sed 改lock比较麻烦，因此写个转换工具来替换
+http://demian.wang/transform-registry/
